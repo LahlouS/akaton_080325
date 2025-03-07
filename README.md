@@ -1,18 +1,19 @@
 # akaton_080325
-
-vous trouverez les fichiers data a l'adresse:
-https://drive.google.com/file/d/1iZ7x2a3BHaF6wLbc9ZqDXNWejF4-AYdn/view?usp=drive_link
-
-j'ai mis tous les fichiers mais le dataset clean et merge est le fichier suivant: ***clean_joe_donald.csv***
-
-Je vous ai laissé a dataprep effectué pour produire le dataset.
-
-: cmd : unzip datas.zip
-
 # Dataset Description
 
 ## Overview
 This dataset contains social media data collected from Twitter. It includes metadata about users, their tweets, and their locations. The dataset is structured with various columns capturing user details, tweet content, and geographic information.
+
+## Dataset Access
+The data files can be found at the following address:
+[Google Drive Link](https://drive.google.com/file/d/1iZ7x2a3BHaF6wLbc9ZqDXNWejF4-AYdn/view?usp=drive_link).
+
+All files are included in the repository, but the cleaned and merged dataset is:
+**`clean_joe_donald.csv`**.
+
+```bash
+unzip datas.zip
+```
 
 ## Columns Description
 
