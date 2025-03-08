@@ -7,7 +7,6 @@ import pandas as pd
 
 
 def main():
-    # Get values from .env
     api_key = os.getenv("GOODFIRE_API_KEY")
 
     client = goodfire.Client(api_key=api_key)
@@ -33,4 +32,3 @@ if __name__ == "__main__":
     # Load .env file
     load_dotenv()
     main()
-    
