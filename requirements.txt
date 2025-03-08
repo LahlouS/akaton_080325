@@ -1,0 +1,7 @@
+chromadb
+flask
+
+kaggle
+
+pandas
+goodfire

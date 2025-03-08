@@ -1,50 +1,5 @@
-# akaton_080325
-# Dataset Description
-
-## Overview
-This dataset contains social media data collected from Twitter. It includes metadata about users, their tweets, and their locations. The dataset is structured with various columns capturing user details, tweet content, and geographic information.
-
-## Dataset Access
-The data files can be found at the following address:
-[Google Drive Link](https://drive.google.com/file/d/1iZ7x2a3BHaF6wLbc9ZqDXNWejF4-AYdn/view?usp=drive_link).
-
-All files are included in the repository, but the cleaned and merged dataset is:
-**`clean_joe_donald.csv`**.
-
-```bash
-unzip datas.zip
+```.env
+GOODFIRE\_API\_KEY\=
+KAGGLE\_USERNAME\=
+KAGGLE\_KEY\=
 ```
-
-## Columns Description
-
-| Column Name             | Data Type  | Description |
-|-------------------------|-----------|-------------|
-| `source`               | string    | Source of the tweet (e.g., TweetDeck, Social Mediaset). |
-| `user_id`              | int64     | Unique identifier of the user. |
-| `user_name`            | string    | Name of the user. |
-| `user_screen_name`     | string    | Twitter handle of the user. |
-| `user_description`     | string    | Bio or description provided by the user. |
-| `user_followers_count` | float64   | Number of followers the user has. |
-| `user_location`        | string    | Location provided by the user in their profile. |
-| `lat`                  | float64   | Latitude coordinate of the user (if available). |
-| `long`                 | float64   | Longitude coordinate of the user (if available). |
-| `city`                 | string    | City associated with the tweet (if available). |
-| `country`              | string    | Country associated with the tweet. |
-| `continent`            | string    | Continent associated with the tweet. |
-| `state`                | string    | State (if applicable). |
-| `state_code`           | string    | State code (if applicable). |
-| `collected_at`         | datetime  | Timestamp when the data was collected. |
-
-## Notes
-- Some fields may contain `NaN` values when the data is unavailable.
-- Geographic data (`lat`, `long`, `city`, etc.) may be missing for some users.
-- The dataset includes metadata from different sources and may require cleaning before analysis.
-
-## Usage
-This dataset can be used for various analyses, such as:
-- Social media trends and engagement
-- User location-based analytics
-- Sentiment analysis and topic modeling
-
-For any questions or clarifications, please reach out to the dataset provider.
-
