@@ -14,11 +14,12 @@ def create_group(ember_answers: list[str], data_frame: pd.DataFrame):
         raise ValueError("ember_answers data_frame not same size")
     trump_list: pd.DataFrame = pd.DataFrame()
     biden_list: pd.DataFrame = pd.DataFrame()
+
     for index, row in data_frame.iterrows():
         if ember_answers[index] == 'Biden':
             biden_list = pd.concat([biden_list, pd.DataFrame([row])], ignore_index=True)
         elif ember_answers[index] == 'Trump':
-            trump_list = pd.concat([biden_list, pd.DataFrame([row])], ignore_index=True)
+            trump_list = pd.concat([trump_list, pd.DataFrame([row])], ignore_index=True)
     return trump_list, biden_list
 
 
@@ -29,14 +30,9 @@ def main():
     # llm_answers = request_ember(prompt_list, 0, len(prompt_list))
     # write_list_to_file(llm_answers, './result/vote_Prediction_llm_answer')\
     trump_list, biden_list = create_group(ember_answers, data_frame)
-    print(len(trump_list))
-    print(len(biden_list))
-    biden = [value for value in ember_answers if value == "Biden"]
-    trump = [value for value in ember_answers if value == "Trump"]
-    # test = ember_ers
-    print(len(biden))
-    print(len(trump))
 
+    print(trump_list, biden_list)
+    # todo : build format : [{ "role": "user", "content": "TWEET"},{"role": "assistant", "content": "Biden"}],
 
 
 
