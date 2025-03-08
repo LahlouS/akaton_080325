@@ -22,11 +22,10 @@ def main():
             stream=True,
             max_completion_tokens=3,
         ):
-            #answer: str = token.choices[0].delta.content
-            print(token.choices[0].delta.content, end="")
-            #llm_answers.append(answer)
-    #data_frame["vote_prediction"] = llm_answers
-    #print(llm_answers)
+            answer: str = token.choices[0].delta.content
+            llm_answers.append(answer)
+    data_frame["vote_prediction"] = llm_answers
+    print(llm_answers)
 
 if __name__ == "__main__":
     # Load .env file
