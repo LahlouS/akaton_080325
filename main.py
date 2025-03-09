@@ -3,36 +3,29 @@ import pandas as pd
 from utils.prompt import build_basic_prompt
 from utils.parse_csv import parse_csv
 from ember_answers import ember_answers
+from utils.create_df_group import create_df_group
 # from utils.request_ember import request_ember
 # from utils.write_list_to_csv import write_list_to_file
 # from utils.request_ember import request_ember
 
-def create_group(ember_answers: list[str], data_frame: pd.DataFrame):
-    if (len(ember_answers) != len(data_frame)):
-        raise ValueError("ember_answers data_frame not same size")
-    trump_list: pd.DataFrame = pd.DataFrame()
-    biden_list: pd.DataFrame = pd.DataFrame()
 
-    for index, row in data_frame.iterrows():
-        if ember_answers[index] == 'Biden':
-            biden_list = pd.concat([biden_list, pd.DataFrame([row])], ignore_index=True)
-        elif ember_answers[index] == 'Trump':
-            trump_list = pd.concat([trump_list, pd.DataFrame([row])], ignore_index=True)
-    return trump_list, biden_list
-
-
+def build_conversation(user_input_list: pd.DataFrame, llm_output: str) -> list[list[dict[str, str]]]:
+    # Construct the list of conversation pairs
+    return [[{"role": "user", "content": str(user_input.to_dict())},
+         {"role": "assistant", "content": llm_output}]
+        for _, user_input in user_input_list.iterrows()]
 
 def main():
     data_frame = parse_csv()
     prompt_list = build_basic_prompt(data_frame=data_frame)
     # llm_answers = request_ember(prompt_list, 0, len(prompt_list))
     # write_list_to_file(llm_answers, './result/vote_Prediction_llm_answer')\
-    trump_list, biden_list = create_group(ember_answers, data_frame)
+    df_trump_list, df_biden_list = create_df_group(ember_answers, data_frame)
 
-    print(trump_list, biden_list)
-    # todo : build format : [{ "role": "user", "content": "TWEET"},{"role": "assistant", "content": "Biden"}],
-
-
+    biden_conversation = build_conversation(df_biden_list, "Biden")
+    trump_conversation = build_conversation(df_trump_list, "Trump")
+    assert(len(biden_conversation) == len(df_biden_list) == ember_answers.count("Biden"))
+    assert(len(trump_conversation) == len(df_trump_list) == ember_answers.count("Trump"))
 
 if __name__ == "__main__":
     # Load .env file

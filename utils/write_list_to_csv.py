@@ -1,3 +1,5 @@
+import os
+
 def write_list_to_file(llm_answers: list[str], file_path: str):
     """
     Writes a list of strings to a specified file, each on a new line.
