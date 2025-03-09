@@ -18,7 +18,7 @@ def build_conversation(user_input_list: pd.DataFrame, llm_output: str) -> list[l
 def main():
     data_frame = parse_csv()
     prompt_list = build_basic_prompt(data_frame=data_frame)
-    # llm_answers = request_ember(prompt_list, 0, len(prompt_list))
+    # llm_answers = request_ember(prompt_list)
     # write_list_to_file(llm_answers, './result/vote_Prediction_llm_answer')\
     df_trump_list, df_biden_list = create_df_group(ember_answers, data_frame)
 
