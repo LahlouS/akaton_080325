@@ -1,9 +1,7 @@
-import os
 from dotenv import load_dotenv
-import goodfire
-from utils.prompt import build_prompt
-from utils.parse_csv import parse_csv
 import pandas as pd
+from utils.prompt import build_basic_prompt
+from utils.parse_csv import parse_csv
 from ember_answers import ember_answers
 # from utils.request_ember import request_ember
 # from utils.write_list_to_csv import write_list_to_file
@@ -26,7 +24,7 @@ def create_group(ember_answers: list[str], data_frame: pd.DataFrame):
 
 def main():
     data_frame = parse_csv()
-    prompt_list = build_prompt(data_frame=data_frame)
+    prompt_list = build_basic_prompt(data_frame=data_frame)
     # llm_answers = request_ember(prompt_list, 0, len(prompt_list))
     # write_list_to_file(llm_answers, './result/vote_Prediction_llm_answer')\
     trump_list, biden_list = create_group(ember_answers, data_frame)
