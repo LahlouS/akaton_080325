@@ -1,15 +1,14 @@
+import os
 from dotenv import load_dotenv
 import pandas as pd
 from utils.prompt import build_basic_prompt
 from utils.parse_csv import parse_csv
 from ember_answers import ember_answers
 from utils.create_df_group import create_list_group_based_on_prompt
-from utils.get_features_by_contrast import get_features_by_contrast
-import os
 from utils.request_ember import infer_with_features, request_ember
 from utils.write_list_to_file import write_list_to_file
-from utils.request_ember import request_ember
 from utils.get_sorted_features_by_inspect import get_sorted_features_by_inspect
+from utils.write_graph import plot_llm_comparison, write_confusion_matrix
 
 api_key = os.getenv("GOODFIRE_API_KEY")
 
@@ -28,12 +27,9 @@ def features_coverage_pipeline(
     trump_features: list[str]
 ):
     llm_features_answers_biden: list[str] = infer_with_features(
-        data_frame=data_frame, features=list(biden_features)[:20])
+        data_frame=data_frame, features=biden_features, end=60)
     llm_features_answers_trump: list[str] = infer_with_features(
-        data_frame=data_frame, features=list(trump_features)[:20])
-    llm_features_answers_biden = llm_features_answers_biden[:60]
-    llm_features_answers_trump = llm_features_answers_trump[:60]
-    llm_answers = llm_answers[:60]
+        data_frame=data_frame, features=trump_features, end=60)
 
     llm_features_answers: list[str] = []
     for biden_answer, trump_answer in zip(llm_features_answers_biden, llm_features_answers_trump):
@@ -44,11 +40,12 @@ def features_coverage_pipeline(
         elif trump_answer != "neutral" and biden_answer == "neutral":
             llm_features_answers.append(trump_answer)
         elif trump_answer != biden_answer:
-            llm_answers.append("neutral")
+            llm_features_answers.append("neutral")
         else:
-            llm_answers.append(biden_answer)
+            llm_features_answers.append(biden_answer)
     assert len(llm_features_answers) == len(llm_features_answers_biden)
     assert len(llm_features_answers) == len(llm_features_answers_trump)
+    return llm_features_answers
 
 
 def from_df_to_conversation_list(user_input_list: pd.DataFrame, llm_output: str) -> list[list[dict[str, str]]]:
@@ -85,16 +82,25 @@ def main():
     assert(len(trump_conversation) == len(trump_prompt_list) == ember_answers.count("Trump"))
     biden_top_features_by_inspect_score, biden_top_features_by_inspect = get_sorted_features_by_inspect(biden_conversation)
     trump_top_features_by_inspect_score, trump_top_features_by_inspect = get_sorted_features_by_inspect(trump_conversation)
-    write_list_to_file(biden_top_features_by_inspect_score, "result/biden_top_features_by_inspect_score.txt")
-    write_list_to_file(biden_top_features_by_inspect, "result/biden_top_features_by_inspect.txt")
-    write_list_to_file(trump_top_features_by_inspect_score, "result/trump_top_features_by_inspect_score.txt")
-    write_list_to_file(trump_top_features_by_inspect, "result/trump_top_features_by_inspect.txt")
-    features_coverage_pipeline(
+    write_list_to_file(
+        biden_top_features_by_inspect_score, "result/biden_top_features_by_inspect_score.txt")
+    write_list_to_file(
+        biden_top_features_by_inspect, "result/biden_top_features_by_inspect.txt")
+    write_list_to_file(
+        trump_top_features_by_inspect_score, "result/trump_top_features_by_inspect_score.txt")
+    write_list_to_file(
+        trump_top_features_by_inspect, "result/trump_top_features_by_inspect.txt")
+    llm_answers = llm_answers[:60]
+    llm_features_answers = features_coverage_pipeline(
         data_frame=data_frame,
         llm_answers=llm_answers,
         biden_features=biden_top_features_by_inspect[:10],
         trump_features=trump_top_features_by_inspect[:10]
     )
+    plot_llm_comparison(
+        llm_answers=llm_answers, llm_features_answer=llm_features_answers, filename="exp-00-plot.png")
+    write_confusion_matrix(
+        llm_answers=llm_answers, llm_features_answers=llm_features_answers, filename="exp-00-confusion-matrix.png")
 
 if __name__ == "__main__":
 	# Load .env file

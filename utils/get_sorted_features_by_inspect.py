@@ -2,31 +2,49 @@ import os
 import goodfire
 from utils.write_list_to_file import write_list_to_file
 
-def compute_feature_scores(feature_map, lambda_variance=0.3):
-    """
-    Calcule un score pour chaque feature en fonction de l'activation.
-
-    feature_map: dict[str, list[int]] - Dictionnaire feature -> liste des activations.
-    lambda_variance: float - Poids donné à la variance dans le score.
-
-    Retourne: dict[str, float] - Dictionnaire feature -> score.
-    """
+def compute_feature_mean_scores(feature_map):
     feature_scores = {}
-
+    mean_len = 0
+    i = 0
+    for feature, activations in feature_map.items():
+        i += 1
+        mean_len += len(feature)
+    mean_len /= i
     for feature, activations in feature_map.items():
         if not activations:
             feature_scores[feature] = 0
             continue
-
         n = len(activations)
-        mean_activation = sum(activations) / n
-        variance_activation = sum((x - mean_activation) ** 2 for x in activations) / n
-
-        # Score combiné : Moyenne + lambda * Variance
-        score = mean_activation + lambda_variance * variance_activation
+        _mean = sum(activations) / n
+        score = _mean * (n / mean_len)
         feature_scores[feature] = score
-
     return feature_scores
+
+# def compute_feature_scores(feature_map, lambda_variance=0.3):
+#     """
+#     Calcule un score pour chaque feature en fonction de l'activation.
+
+#     feature_map: dict[str, list[int]] - Dictionnaire feature -> liste des activations.
+#     lambda_variance: float - Poids donné à la variance dans le score.
+
+#     Retourne: dict[str, float] - Dictionnaire feature -> score.
+#     """
+#     feature_scores = {}
+
+#     for feature, activations in feature_map.items():
+#         if not activations:
+#             feature_scores[feature] = 0
+#             continue
+
+#         n = len(activations)
+#         mean_activation = sum(activations) / n
+#         variance_activation = sum((x - mean_activation) ** 2 for x in activations) / n
+
+#         # Score combiné : Moyenne + lambda * Variance
+#         score = mean_activation + lambda_variance * variance_activation
+#         feature_scores[feature] = score
+
+#     return feature_scores
 
 
 def get_feature_activation(conversation: list, client, variant):

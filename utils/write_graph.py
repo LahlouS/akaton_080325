@@ -6,11 +6,21 @@ import seaborn as sns
 
 def plot_llm_comparison(llm_answers, llm_features_answer, filename):
     # Création du dossier de sauvegarde s'il n'existe pas
-    save_path = "save/graphic"
-    os.makedirs(save_path, exist_ok=True)
-
+    save_path = os.path.join(
+        os.getenv("HOME"), os.getenv("SAVE_PATH"), "graphic", filename)
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
     # Définition des catégories et de leur position sur l'axe y
-    categories = {"Trump": 0, "Neutral": 1, "Biden": 2}
+    categories = {"trump": 0, "neutral": 1, "biden": 2}
+
+    llm_answers = [answer.lower().strip() for answer in llm_answers]
+    llm_features_answer = [answer.lower().strip() for answer in llm_features_answer]
+
+    if len(llm_answers) != len(llm_features_answer):
+        raise ValueError("Les deux listes doivent avoir la même longueur")
+
+    if not all(answer in categories for answer in llm_answers + llm_features_answer):
+        raise ValueError("Toutes les réponses doivent être 'Trump', 'Neutral' ou 'Biden'")
+
 
     # Conversion des réponses en coordonnées numériques
     x_values = np.arange(len(llm_answers))
@@ -36,14 +46,15 @@ def plot_llm_comparison(llm_answers, llm_features_answer, filename):
     plt.legend()
 
     # Sauvegarde et affichage
-    filepath = os.path.join(save_path, filename)
-    plt.savefig(filepath)
+    plt.savefig(save_path)
     plt.close()
-    print(f"Graphique sauvegardé dans {filepath}")
+    print(f"Graphique sauvegardé dans {save_path}")
+
 
 def write_confusion_matrix(llm_answers: list[str], llm_features_answers: list[str], filename: str):
     save_path = os.path.join(
         os.getenv("HOME"), os.getenv("SAVE_PATH"), "confusion_matrix", filename)
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
 
     labels = ["Trump", "Neutral", "Biden"]
     cm = confusion_matrix(llm_answers, llm_features_answers, labels=labels)
@@ -56,7 +67,7 @@ def write_confusion_matrix(llm_answers: list[str], llm_features_answers: list[st
     plt.xlabel("LLM features-based prediction")
     plt.ylabel("LLM tweet-based prediction")
     plt.title("Neural Pathway Coverage")
-    plt.show()
     plt.savefig(save_path)
+    plt.show()
     plt.close()
 
