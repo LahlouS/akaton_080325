@@ -59,4 +59,7 @@ def build_features_prompt(data_frame: pd.DataFrame, features: list[str]) -> list
     instructions: str = ""
     for feature in features:
         instructions += "- " + feature + "\n"
-    return build_prompt(data_frame=data_frame, instruction=instructions)
+    return build_prompt(
+        data_frame=data_frame,
+        instruction=PROMPT_FEATURES_INSTRUCTION.format(features=instructions)
+    )
