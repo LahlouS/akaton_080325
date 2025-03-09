@@ -32,7 +32,7 @@ def main():
     trump_list, biden_list = create_group(ember_answers, data_frame)
 
     print(trump_list, biden_list)
-    # todo : build format : [{ "role": "user", "content": "TWEET"},{"role": "assistant", "content": "Biden"}],
+    # TODO : build format : [{ "role": "user", "content": "TWEET"},{"role": "assistant", "content": "Biden"}],
 
 
 
