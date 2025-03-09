@@ -59,8 +59,8 @@ def main():
     # TODO: test avec les prompts plutot que la dataframe et regarder les features les plus pertinentes
     df_trump_list, df_biden_list = create_df_group(ember_answers, data_frame)
 
-	biden_conversation = build_conversation_list(df_biden_list, "Biden")
-	trump_conversation = build_conversation_list(df_trump_list, "Trump")
+    biden_conversation = build_conversation_list(df_biden_list, "Biden")
+    trump_conversation = build_conversation_list(df_trump_list, "Trump")
 
     assert(len(biden_conversation) == len(df_biden_list) == ember_answers.count("Biden"))
     assert(len(trump_conversation) == len(df_trump_list) == ember_answers.count("Trump"))
@@ -75,5 +75,5 @@ def main():
 
 if __name__ == "__main__":
 	# Load .env file
-	load_dotenv()
-	main()
+    load_dotenv()
+    main()
