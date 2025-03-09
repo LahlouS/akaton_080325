@@ -66,31 +66,40 @@ def from_input_to_conversation_list(user_input_list: list, llm_output: str):
         ] for user_input in user_input_list
     ]
 
+def read_file(filepath: str):
+    with open(filepath, "r") as file:
+        content = file.read()
+        return content.splitlines()
+        
 def main():
     data_frame = parse_csv()
-    prompt_list = build_basic_prompt(data_frame=data_frame)
-    llm_answers = request_ember(prompt_list)
-    write_list_to_file(llm_answers, './result/vote_Prediction_llm_answer')
+    #prompt_list = build_basic_prompt(data_frame=data_frame)
+    #llm_answers = request_ember(prompt_list)
+    
+    # write_list_to_file(llm_answers, './result/vote_Prediction_llm_answer')
 
-    biden_prompt_list, trump_prompt_list = create_list_group_based_on_prompt(ember_answers, prompt_list)
-    print(len(trump_prompt_list))
-    print(len(biden_prompt_list))
-    biden_conversation = from_input_to_conversation_list(biden_prompt_list, "Biden")
-    trump_conversation = from_input_to_conversation_list(trump_prompt_list, "Trump")
+    # biden_prompt_list, trump_prompt_list = create_list_group_based_on_prompt(ember_answers, prompt_list)
+    # print(len(trump_prompt_list))
+    # print(len(biden_prompt_list))
+    # biden_conversation = from_input_to_conversation_list(biden_prompt_list, "Biden")
+    # trump_conversation = from_input_to_conversation_list(trump_prompt_list, "Trump")
 
-    assert(len(biden_conversation) == len(biden_prompt_list) == ember_answers.count("Biden"))
-    assert(len(trump_conversation) == len(trump_prompt_list) == ember_answers.count("Trump"))
-    biden_top_features_by_inspect_score, biden_top_features_by_inspect = get_sorted_features_by_inspect(biden_conversation)
-    trump_top_features_by_inspect_score, trump_top_features_by_inspect = get_sorted_features_by_inspect(trump_conversation)
-    write_list_to_file(
-        biden_top_features_by_inspect_score, "result/biden_top_features_by_inspect_score.txt")
-    write_list_to_file(
-        biden_top_features_by_inspect, "result/biden_top_features_by_inspect.txt")
-    write_list_to_file(
-        trump_top_features_by_inspect_score, "result/trump_top_features_by_inspect_score.txt")
-    write_list_to_file(
-        trump_top_features_by_inspect, "result/trump_top_features_by_inspect.txt")
-    llm_answers = llm_answers[:60]
+    # assert(len(biden_conversation) == len(biden_prompt_list) == ember_answers.count("Biden"))
+    # assert(len(trump_conversation) == len(trump_prompt_list) == ember_answers.count("Trump"))
+    # biden_top_features_by_inspect_score, biden_top_features_by_inspect = get_sorted_features_by_inspect(biden_conversation)
+    # trump_top_features_by_inspect_score, trump_top_features_by_inspect = get_sorted_features_by_inspect(trump_conversation)
+    # write_list_to_file(
+    #     biden_top_features_by_inspect_score, "result/biden_top_features_by_inspect_score.txt")
+    # write_list_to_file(
+    #     biden_top_features_by_inspect, "result/biden_top_features_by_inspect.txt")
+    # write_list_to_file(
+    #     trump_top_features_by_inspect_score, "result/trump_top_features_by_inspect_score.txt")
+    # write_list_to_file(
+    #     trump_top_features_by_inspect, "result/trump_top_features_by_inspect.txt")
+    biden_top_features_by_inspect = read_file("/Users/garancecolomer/akaton_080325/result/biden_top_features_by_inspect_0.txt")
+    trump_top_features_by_inspect = read_file("/Users/garancecolomer/akaton_080325/result/trump_top_features_by_inspect_0.txt")
+
+    llm_answers = ember_answers[:60]
     llm_features_answers = features_coverage_pipeline(
         data_frame=data_frame,
         llm_answers=llm_answers,
