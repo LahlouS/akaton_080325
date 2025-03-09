@@ -1,10 +1,8 @@
 import pandas as pd
-from dotenv import load_dotenv
-
 
 PROMPT_TEMPLATE="""You are a political analyst. Your goal is to determine who the user voted for between Trump and Biden.
 To do this, you must rely on the user's name, their description, their tweet, and their state.
-Respond only with string "Trump" or "Biden".
+Respond only with string "Trump" or "Biden" or "Neutral".
 Input example:
 {{
     "user_name": "Love the beach love my family",
