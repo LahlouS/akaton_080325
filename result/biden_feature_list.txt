@@ -1,0 +1,109 @@
+Campaign strategy and planning steps
+Repeated domain-specific nouns that anchor topical discussions
+Elaborative description and evaluation in reviews
+The assistant is providing a list of options or features
+Conversation reset points, especially after problematic exchanges
+Failed emoji generation attempts
+The revelation or identification of limitations, drawbacks and challenges
+Rhetorical patterns attributing qualities to authority figures
+The assistant should make its next move in a game
+Detailed personality traits for shy/submissive roleplay characters
+Rhetorical patterns in critical descriptions of controversial figures
+Professional diplomatic language patterns when handling sensitive content
+Romance language copular constructions in biographical descriptions
+Formal expressions of negation or inability across languages
+Television news reporting and broadcast journalism
+Abstract system descriptions in technical or metaphysical contexts
+Narratives about gaining political power through democratic processes
+Offensive request from the user
+Statistical descriptions of populations or study groups
+Business entities and proper nouns beginning with B
+Electoral candidate information and election winner announcements
+Formal bureaucratic language describing FBI investigations and findings
+Hashtag suffix patterns in social media posts
+Rhetorical punctuation patterns in confrontational or argumentative speech
+Combining multiple emojis to create complex meanings in emoji-based communication
+Progressive political values and social justice rhetoric
+Grammatical patterns used in formal specifications and definitions
+Hashtags for nature, space and exploration photography on social media
+Start of a new conversation thread
+Extended sequences of related items in formal writing
+Connecting words and suffixes in technical identifiers and schema definitions
+Demands for rights and social justice in activist contexts
+The assistant should write in Trump's speaking style
+Beginning of a new conversation or topic segment
+Grammatical connectives in descriptive or explanatory text
+Controversial political figures requiring diplomatic responses
+Formal expression of controversial or critical opinions
+Structured data type declarations and formatting syntax
+Chains of biographical attributes connected by conjunctions and commas
+Newline characters used for text formatting and structure
+Sequential vs parallel computation flow in neural networks
+The assistant is providing a list of options or enumerated responses
+Organizational and professional group structures
+Spaces within technical explanatory text
+The assistant should use emojis and adopt a playful marketing tone
+Establishing opportunities or pathways, especially metaphorically
+Communication using emoji symbols
+The assistant is building up a detailed explanation
+Syntactical sugar and configuration elements in programming
+Democratic processes and voting systems
+Neutral biographical descriptions of Trump's presidency and controversies
+Model's temporal knowledge boundary around early 2020s
+Collaborative brainstorming and exploring possibilities in dialogue
+Descriptions of electoral victories and defeats, especially close or contested results
+Start of a new conversation segment in chat format
+Offensive content using African American Vernacular English
+Young adult recreational and social activities
+Qualifying suffixes and specifications across technical domains
+Voter participation and electoral behavior
+Progressive and activist themes and narrative framing
+Start of a new conversation segment
+Start of new conversation segment or topic switch
+Progressive social advocacy and activism
+Interface and interaction design concepts
+Social media hashtags for content categorization
+The assistant should maintain political neutrality when comparing parties
+Technical and procedural aspects of electoral systems and voting processes
+Connecting words and transitions between multiple possibilities in narrative text
+Romance language conjunctions and prepositions in descriptive passages
+Explanations of voting procedures and voter registration requirements
+System capacity and throughput management
+Formal institutional discourse supporting LGBTQ+ inclusion
+Clinical and medical aspects of COVID-19, particularly symptoms and severity
+Building social connections and engagement in digital spaces
+Technical syntax tokens and commands in programming contexts
+COVID-19 pandemic societal impacts and policy responses
+Syntactical patterns for value assignment in code
+Formatting elements in numbered lists of US states
+Professional performance enhancement and optimization techniques
+Marketing language highlighting product benefits and features
+Technical skills section formatting in resumes
+Start of a new conversation or major topic reset
+Start of a new conversation segment or reset
+Business analysis and market evaluation language
+Content organization and section definition markers
+Beginning of new conversation segment marker
+Emoji tokens used in text compression and social media stylization
+Syntactical sugar in programming languages
+Trump's pre-political business career and background narrative
+CNN as a news organization and source of reporting
+The assistant should maintain neutrality on controversial topics
+Language describing US judicial nominations and appointments
+User interface navigation and content browsing elements
+Hashtags in social media contexts
+Formal prescriptive language indicating procedures or transitions
+List and explanation structuring elements (periods, connectors, and formatting)
+Professional and technical requirements in formal documentation
+Technical destinations and targets (including string literals, service endpoints, and algorithmic goals)
+Reset conversation state and establish fresh context boundaries
+Professional and creative occupations
+Introducing a perspective or description with 'as a/an' or 'like a'
+Start of a new conversation with system header format
+Grammatical connectors and word boundaries in non-English text tokenization
+Explaining ongoing complications or compounding difficulties
+Vote counting and electoral process mechanics
+Words indicating improvement or enhancement, especially in technical contexts
+Numbers appearing in lottery prediction sequences
+Career progression descriptions in political biographies
+Complex academic prose and technical writing style

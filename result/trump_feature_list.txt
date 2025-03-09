@@ -1,0 +1,88 @@
+Exhaustive or complete coverage indicators in technical contexts
+Conversation reset points, especially after problematic exchanges
+Corrupted or malformed input text requiring clarification
+Words containing 'tra' followed by hard consonants (p,g,ck)
+Numerical specifications that control frequency or quantity
+American patriotic symbolism and national anthem references
+Unicode encoding errors and corrupted special characters
+Official and ceremonial discussions of flags and their symbolism
+Corrupted emoji or special character sequences
+feature_43411
+Content related to neo-Nazis and far-right extremism requiring careful handling
+Formal expressions of negation or inability across languages
+Television news reporting and broadcast journalism
+Offensive request from the user
+Formal bureaucratic language describing FBI investigations and findings
+feature_51013
+Discussion of the January 6th Capitol attack and related political violence
+Hashtag suffix patterns in social media posts
+Discussions of political and institutional corruption
+Hashtags for nature, space and exploration photography on social media
+Enumerating implemented political policies and actions
+Conservative political ideology and institutions
+Traditional mass media and press outlets
+Beginning of a new conversation or topic segment
+The assistant should write in Trump's speaking style
+Controversial political figures requiring diplomatic responses
+Formal expression of controversial or critical opinions
+Character encoding errors and emoji rendering failures
+Controversial topics requiring careful, neutral responses
+Start of a new conversation segment in the chat format
+Christian religious discourse and formal prayer language
+The assistant should debunk conspiracy theories and encourage critical thinking
+Communication using emoji symbols
+Methodological instructions for achieving specific outcomes
+Syntactical sugar and configuration elements in programming
+Start of a new conversation segment with system context
+Neutral biographical descriptions of Trump's presidency and controversies
+Model's temporal knowledge boundary around early 2020s
+Conversation segment boundaries and topic resets
+Escalating civil unrest and protest violence
+Jailbreak prompt passages describing AI as a transcendent unlimited being
+Start of a new conversation segment in chat format
+Social media hashtags and tagging behavior
+Technical setup and configuration states in experimental procedures
+Start of a new conversation or topic segment
+Special characters and formatting tokens that provide structure rather than content
+Discussions of censorship and content control mechanisms
+Start of a new conversation segment
+Start of new conversation segment or topic switch
+Interface and interaction design concepts
+Nationalist rhetoric and indoctrination language
+The assistant is suggesting creative usernames or nicknames
+Social media hashtags for content categorization
+Official institutional declarations of purpose and authority
+Far-right extremist rhetoric and argumentative patterns
+Questions and discussions about Twitter's CEO status
+Criticisms and weaponization of woke culture
+Words or names beginning with 'Jo'
+Building social connections and engagement in digital spaces
+Sentence construction patterns for elaboration and explanation
+Random alphanumeric segments in URL identifiers
+Syntactical patterns for value assignment in code
+Croatian language and content about Croatia
+South Slavic grammatical markers and word endings
+Date and sequence formatting connectors (especially hyphens and numbers)
+Biblical apocalyptic literature and end-times prophecies
+Start of a new conversation or major topic reset
+Start of a new conversation segment or reset
+Template placeholders for names (NAME_1, NAME_2 etc)
+Conservative political principles being explained in comparative context
+Beginning of new conversation segment marker
+Business analysis and market evaluation language
+Gathering evidence to expose hidden truths
+Emoji tokens used in text compression and social media stylization
+SQL join syntax and table aliases
+Hashtags in social media contexts
+Formal prescriptive language indicating procedures or transitions
+Technical destinations and targets (including string literals, service endpoints, and algorithmic goals)
+Reset conversation state and establish fresh context boundaries
+Bob as a generic male name in example dialogues
+Start of a new conversation with system header format
+Non-English functional and navigational text elements
+Explaining ongoing complications or compounding difficulties
+Structural markup and formatting tokens that delineate content
+Country codes and flag emojis in structured data formats
+Conspiracy theorist writing style and rhetoric
+Career progression descriptions in political biographies
+Start of a new conversation thread
