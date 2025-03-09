@@ -6,9 +6,9 @@ from ember_answers import ember_answers
 from utils.create_df_group import create_df_group
 from utils.get_features_by_contrast import get_features_by_contrast
 import os
-# from utils.request_ember import request_ember
-# from utils.write_list_to_csv import write_list_to_file
-# from utils.request_ember import request_ember
+from utils.request_ember import infer_with_features, request_ember
+from utils.write_list_to_csv import write_list_to_file
+from utils.request_ember import request_ember
 
 api_key = os.getenv("GOODFIRE_API_KEY")
 
@@ -25,8 +25,12 @@ def build_conversation_list(user_input_list: pd.DataFrame, llm_output: str) -> l
 def main():
     data_frame = parse_csv()
     prompt_list = build_basic_prompt(data_frame=data_frame)
-    # llm_answers = request_ember(prompt_list)
-    # write_list_to_file(llm_answers, './result/vote_Prediction_llm_answer')\
+    llm_answers = request_ember(prompt_list)
+    features: list[str] = []
+    llm_features_answers = infer_with_features(data_frame=data_frame, features=features)
+    df_feature_trump_list, df_feature_biden_list = create_df_group(llm_features_answers, data_frame)
+    # fonction qui prends llm_answer et llm_features answers
+    write_list_to_file(llm_answers, './result/vote_Prediction_llm_answer')
     df_trump_list, df_biden_list = create_df_group(ember_answers, data_frame)
 
     biden_conversation = build_conversation_list(df_biden_list, "Biden")
