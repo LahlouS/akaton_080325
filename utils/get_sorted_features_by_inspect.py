@@ -75,7 +75,7 @@ def get_features_by_inspect(conversations: list):
 
 def get_sorted_features_by_inspect(conversation: list[list[dict[str, str]]]):
 	features_map = get_features_by_inspect(conversation)
-	scored_features_map = compute_feature_scores(features_map)
+	scored_features_map = compute_feature_mean_scores(features_map)
 	sorted_scored_features = sorted(scored_features_map.items(), key=lambda x: x[1], reverse=True)
 
 	sorted_texts = [item[0] for item in sorted_scored_features]
