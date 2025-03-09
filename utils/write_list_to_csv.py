@@ -1,3 +1,6 @@
+import os
+
+
 def write_list_to_file(llm_answers: list[str], file_path: str):
     """
     Writes a list of strings to a specified file, each on a new line.
@@ -16,3 +19,5 @@ def write_list_to_file(llm_answers: list[str], file_path: str):
         print(f"LLM answers have been successfully written to {file_path}")
     except Exception as e:
         print(f"An error occurred while writing to the file: {e}")
+
+
