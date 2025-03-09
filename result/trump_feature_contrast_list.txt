@@ -1,0 +1,108 @@
+SQL join syntax and table aliases
+Start of a new conversation segment in chat format
+Formal prescriptive language indicating procedures or transitions
+Technical abbreviations and specialized tokens across computing, finance and engineering
+Descriptions of decisive victories and major achievements
+Narratives about gaining political power through democratic processes
+List item delimiters in structured data (commas, periods, quotes)
+The assistant is providing detailed explanations or translations, particularly for language concepts
+Criticisms and weaponization of woke culture
+The assistant is explaining what information or elements are absent or limited while remaining constructive
+Beginning of a new conversation or topic segment
+Start of a new conversation or topic segment
+Method calls and arguments for accessing program components or scores
+American patriotic symbolism and national anthem references
+Gathering evidence to expose hidden truths
+Content related to neo-Nazis and far-right extremism requiring careful handling
+Start of new conversation segment in multilingual dialogue
+Start of a new conversation thread
+Beginning of new conversation segment marker
+Implementation and execution across contexts (code, math, colonization)
+Numerical identifiers and version numbers in technical contexts
+Syntactical sugar in programming languages
+The assistant is providing a numbered list of creative design suggestions
+Social media hashtags and tagging behavior
+Heavy metal and hard rock music descriptions and characteristics
+Sentence construction patterns for elaboration and explanation
+The assistant should debunk conspiracy theories and encourage critical thinking
+Military and government hierarchical rank descriptions
+Format and structure markers in song lyrics
+Technical process descriptions in materials science and engineering
+Content that needs moderation or filtering for safety/appropriateness
+Conservative political principles being explained in comparative context
+Conversation reset points, especially after problematic exchanges
+Small integers (1-8) used as identifiers or sequence markers
+Social media hashtags for content categorization
+Start of a new conversation segment
+Career progression descriptions in political biographies
+Words beginning with 'mag' across multiple languages
+Country codes and flag emojis in structured data formats
+Conservative political ideology and institutions
+Start of a new conversation segment with system context
+Template placeholders for names (NAME_1, NAME_2 etc)
+Discussion of term limits and succession in positions of power
+Dates and events beyond the model's knowledge cutoff date
+Statistical descriptions of populations or study groups
+Technical acronyms representing specific systems or protocols
+Website domain names and URL structures
+Start of a new conversation segment in the chat format
+The assistant is providing structured or formatted content
+Traditional mass media and press outlets
+Grammatical constructions indicating imminent or planned actions ('m going to, 's going to)
+Neutral biographical descriptions of Trump's presidency and controversies
+The assistant should write in Trump's speaking style
+Grammatical coordination and conjunction patterns in sentences
+Transitional phrases that begin new lines in structured creative text
+Syntactical delimiters and separators in structured text
+feature_51013
+Text formatting and structure through newlines and breaks
+File system paths and directory structures in code and error messages
+Start of a new conversation with system header format
+Discussion of regulatory frameworks and enforcement mechanisms, especially for online platforms
+Jailbreak prompt passages describing AI as a transcendent unlimited being
+Random alphanumeric segments in URL identifiers
+Conversation segment boundaries and topic resets
+Reset conversation state and establish fresh context boundaries
+Corrupted or malformed input text requiring clarification
+Connecting phrases and conjunctions in formal writing
+Official institutional declarations of purpose and authority
+Obfuscated or encoded content potentially indicating malicious activity
+The assistant is suggesting creative usernames or nicknames
+Campaign strategy and planning steps
+Start of a new conversation segment or reset
+Expressions of dominance and superiority in harmful content
+Unicode encoding errors and corrupted special characters
+Interface and interaction design concepts
+Special characters and formatting tokens that provide structure rather than content
+Religious or spiritual messages promoting acceptance and authenticity
+Technical guitar knowledge and specifications in educational contexts
+Introduction or description of a YouTube channel
+Offensive request from the user
+Nationalist rhetoric and indoctrination language
+Code syntax for writing and importing functionality
+Hashtag suffix patterns in social media posts
+The user needs help or clarification in broken English
+Numerical specifications that control frequency or quantity
+Questions and discussions about Twitter's CEO status
+Building social connections and engagement in digital spaces
+Logical flow control words in technical explanations
+feature_43411
+Conspiracy theorist writing style and rhetoric
+URLs that trigger the model to explain it cannot access websites
+The assistant should engage with Twitter-specific content
+Technical setup and configuration states in experimental procedures
+Discussions of censorship and content control mechanisms
+Far-right extremist rhetoric and argumentative patterns
+Christian religious discourse and formal prayer language
+Enumerating implemented political policies and actions
+Discussion of the January 6th Capitol attack and related political violence
+Start of a new conversation or major topic reset
+Configuration parameters and assignment operations in code
+Temporal sequences and duration markers across languages
+Product description formatting and connecting elements
+Methodological instructions for achieving specific outcomes
+Start of new conversation segment or topic switch
+Connecting words in formal explanations and lists
+Biblical apocalyptic literature and end-times prophecies
+Flexible and scalable business processes
+Descriptions of thin or transparent materials and concepts
