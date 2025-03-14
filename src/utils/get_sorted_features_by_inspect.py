@@ -2,6 +2,7 @@ import os
 import goodfire
 from utils.write_list_to_file import write_list_to_file
 
+
 def compute_feature_mean_scores(feature_map):
     feature_scores = {}
     mean_len = 0
@@ -20,31 +21,32 @@ def compute_feature_mean_scores(feature_map):
         feature_scores[feature] = score
     return feature_scores
 
-# def compute_feature_scores(feature_map, lambda_variance=0.3):
-#     """
-#     Calcule un score pour chaque feature en fonction de l'activation.
 
-#     feature_map: dict[str, list[int]] - Dictionnaire feature -> liste des activations.
-#     lambda_variance: float - Poids donné à la variance dans le score.
+def compute_feature_scores_with_variance(feature_map, lambda_variance=0.3):
+    """
+    Calcule un score pour chaque feature en fonction de l'activation.
 
-#     Retourne: dict[str, float] - Dictionnaire feature -> score.
-#     """
-#     feature_scores = {}
+    feature_map: dict[str, list[int]] - Dictionnaire feature -> liste des activations.
+    lambda_variance: float - Poids donné à la variance dans le score.
 
-#     for feature, activations in feature_map.items():
-#         if not activations:
-#             feature_scores[feature] = 0
-#             continue
+    Retourne: dict[str, float] - Dictionnaire feature -> score.
+    """
+    feature_scores = {}
 
-#         n = len(activations)
-#         mean_activation = sum(activations) / n
-#         variance_activation = sum((x - mean_activation) ** 2 for x in activations) / n
+    for feature, activations in feature_map.items():
+        if not activations:
+            feature_scores[feature] = 0
+            continue
 
-#         # Score combiné : Moyenne + lambda * Variance
-#         score = mean_activation + lambda_variance * variance_activation
-#         feature_scores[feature] = score
+        n = len(activations)
+        mean_activation = sum(activations) / n
+        variance_activation = sum((x - mean_activation) ** 2 for x in activations) / n
 
-#     return feature_scores
+        # Score combiné : Moyenne + lambda * Variance
+        score = mean_activation + lambda_variance * variance_activation
+        feature_scores[feature] = score
+
+    return feature_scores
 
 
 def get_feature_activation(conversation: list, client, variant):
@@ -73,13 +75,20 @@ def get_features_by_inspect(conversations: list):
 				features_map[feat.feature.label] = [feat.activation]
 	return features_map
 
-def get_sorted_features_by_inspect(conversation: list[list[dict[str, str]]]):
+
+#TODO: refacto
+def get_top_features(conversation: list[list[dict[str, str]]]):
+    """Get sorted features with inspect methods from Goodfire API"""
 	features_map = get_features_by_inspect(conversation)
+	scored_features_map_var = compute_feature_scores_with_variance(feature_map=features_map)
 	scored_features_map = compute_feature_mean_scores(features_map)
-	sorted_scored_features = sorted(scored_features_map.items(), key=lambda x: x[1], reverse=True)
+	sorted_scored_features = sorted(
+		scored_features_map.items(), key=lambda x: x[1], reverse=True)
+	sorted_scored_features_var = sorted(
+		scored_features_map_var.items(), key=lambda x: x[1], reverse=True)
 
 	sorted_texts = [item[0] for item in sorted_scored_features]
 	string_features_with_score = [str(feature) for feature in sorted_scored_features]
 
-	return string_features_with_score , sorted_texts
+	return string_features_with_score, sorted_texts
 

@@ -3,3 +3,5 @@ venv
 .env
 *.csv
 __pycache__
+.vscode
+./akaton_venv

@@ -37,6 +37,7 @@ def request_ember(prompt_list: list[str], start: int = -1, end: int = -1) -> lis
 def infer_with_features(data_frame: pd.DataFrame, features: list[str], start: int = -1, end: int = -1) -> list[str]:
     return request_ember(
         prompt_list=build_features_prompt(
-            data_frame=data_frame,
-            features=features
-        ), start=start, end=end)
+            data_frame=data_frame, features=features),
+        start=start,
+        end=end
+    )
