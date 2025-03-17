@@ -1,6 +1,6 @@
 import os
 import goodfire
-from utils.write_list_to_file import write_list_to_file
+from src.utils.write_list_to_file import write_list_to_file
 
 
 def compute_feature_mean_scores(feature_map):
@@ -54,7 +54,6 @@ def get_feature_activation(conversation: list, client, variant):
 		messages=conversation,
 		model=variant,
 	)
-	context.top(k=10)
 	return context.top(k=10)
 
 
@@ -77,18 +76,18 @@ def get_features_by_inspect(conversations: list):
 
 
 #TODO: refacto
-def get_top_features(conversation: list[list[dict[str, str]]]):
+def get_top_features(conversation: list[list]):
     """Get sorted features with inspect methods from Goodfire API"""
-	features_map = get_features_by_inspect(conversation)
-	scored_features_map_var = compute_feature_scores_with_variance(feature_map=features_map)
-	scored_features_map = compute_feature_mean_scores(features_map)
-	sorted_scored_features = sorted(
+    features_map = get_features_by_inspect(conversation)
+    scored_features_map_var = compute_feature_scores_with_variance(feature_map=features_map)
+    scored_features_map = compute_feature_mean_scores(features_map)
+    sorted_scored_features = sorted(
 		scored_features_map.items(), key=lambda x: x[1], reverse=True)
-	sorted_scored_features_var = sorted(
+    sorted_scored_features_var = sorted(
 		scored_features_map_var.items(), key=lambda x: x[1], reverse=True)
 
-	sorted_texts = [item[0] for item in sorted_scored_features]
-	string_features_with_score = [str(feature) for feature in sorted_scored_features]
+    sorted_texts = [item[0] for item in sorted_scored_features]
+    string_features_with_score = [str(feature) for feature in sorted_scored_features]
 
-	return string_features_with_score, sorted_texts
+    return string_features_with_score, sorted_texts
 

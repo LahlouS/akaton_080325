@@ -1,6 +1,6 @@
 import os
 import goodfire
-from utils.prompt import build_features_prompt
+from src.utils.prompt import build_features_prompt
 import pandas as pd
 
 def slice_list(list_to_slice: list, start: int = -1, end: int = -1):
