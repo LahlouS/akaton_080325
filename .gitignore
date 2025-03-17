@@ -4,4 +4,4 @@ venv
 *.csv
 __pycache__
 .vscode
-./akaton_venv
+.venv
