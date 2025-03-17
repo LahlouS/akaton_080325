@@ -1,6 +1,6 @@
 import os
 import goodfire
-from utils.write_list_to_file import write_list_to_file
+from src.utils.write_list_to_file import write_list_to_file
 
 # cant load api_key from .env. Idk why.
 

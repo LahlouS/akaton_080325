@@ -14,7 +14,8 @@ def create_df_group(ember_answers: list[str], data_frame: pd.DataFrame):
             df_trump_list = pd.concat([df_trump_list, pd.DataFrame([row])], ignore_index=True)
     return df_trump_list, df_biden_list
 
-def create_list_group_based_on_prompt(ember_answers: list[str], prompt_list: list[str]):
+
+def split_prompt_in_group_label(ember_answers: list[str], prompt_list: list[str]):
     """ create group Biden / Trump """
 
     if (len(ember_answers) != len(prompt_list)):
